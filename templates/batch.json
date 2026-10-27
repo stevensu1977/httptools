@@ -1,0 +1,6 @@
+{
+  "event": "httptools_ok",
+  "messageId": "m-{{run_id}}-{{seq}}",
+  "anonymousId": "a-{{seq}}"
+}
+

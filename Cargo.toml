@@ -1,0 +1,40 @@
+[package]
+name = "batchbench"
+version = "0.1.0"
+edition = "2024"
+description = "Templated HTTP batch load tests powered by httpress"
+repository = "https://github.com/stevensu1977/httptools"
+publish = false
+
+[workspace]
+members = ["vendor/httpress"]
+
+[dependencies]
+anyhow = "1"
+base64 = "0.22"
+bytes = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+clap = { version = "4", features = ["derive", "env"] }
+csv = "1"
+dotenvy = "0.15"
+fastrand = "2"
+httpress = { path = "vendor/httpress" }
+humantime = "2"
+indicatif = "0.17"
+hyper = { version = "1", features = ["server", "http1"] }
+http-body-util = "0.1"
+hyper-util = { version = "0.1", features = ["tokio"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "signal", "time"] }
+url = "2"
+uuid = { version = "1", features = ["v4"] }
+
+[dev-dependencies]
+axum = "0.8"
+futures-util = "0.3"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+

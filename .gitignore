@@ -1,0 +1,11 @@
+/target/
+.env
+.env.*
+!.env.example
+*.local.json
+/results/
+/dist/
+/.agents/
+/.aws/
+/.codex/
+
